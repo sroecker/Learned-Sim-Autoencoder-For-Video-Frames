@@ -285,7 +285,7 @@ class Autoencoder(object):
 
        
        data = sorted(glob(os.path.join("../../../data", config.dataset, "*.png")), key=numericalSort)
-       shuffle(data)
+       tf.random_shuffle(data)
        batch_idxs = min(len(data), config.train_size)/config.batch_size
 
        for idx in xrange(0, batch_idxs):
